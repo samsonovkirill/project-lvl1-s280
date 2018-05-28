@@ -1,6 +1,6 @@
 {
   "name": "my-game-ks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Brain games package",
   "main": "index.js",
   "scripts": {
