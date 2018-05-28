@@ -1,0 +1,22 @@
+{
+  "name": "brain-games",
+  "version": "1.0.0",
+  "description": "Brain games package",
+  "main": "index.js",
+  "scripts": {
+  	"babel-node": "babel-node",
+	"build": "NODE_ENV=production babel src --out-dir dist --source-maps inline"
+	"prepublishOnly": "npm run build"
+  },
+  "author": "Kirill Samsonov",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*"
+  },
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  }
+}
