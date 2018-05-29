@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import start from '..';
+import { welcome } from '..';
 
-start();
+welcome();
