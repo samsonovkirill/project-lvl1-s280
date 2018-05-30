@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import MiniGame from '../mini-game';
 
 const operatorAction = {
   '-': (a, b) => a - b,
@@ -10,7 +9,7 @@ const operatorAction = {
 const playRound = (username) => {
   const operand1 = Math.floor(Math.random() * 20);
   const operand2 = Math.floor(Math.random() * 20);
-  const operator = ['-', '+', '*'][Math.floor(Math.random() * 3)];
+  const operator = Object.keys(operatorAction)[Math.floor(Math.random() * 3)];
   console.log(`Question: ${operand1} ${operator} ${operand2}`);
   const userAnswer = readlineSync.question('Your answer: ');
   const correctAnswer = operatorAction[operator](operand1, operand2);
@@ -20,10 +19,9 @@ const playRound = (username) => {
   return isCorrect;
 };
 
-const brainCalc = new MiniGame({
-  name: 'brain-calc',
+const brainCalc = {
   description: 'What is the result of the expression?',
   playRound,
-});
+};
 
 export default brainCalc;
