@@ -1,6 +1,6 @@
 {
   "name": "my-game-ks",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Brain games package",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,8 @@
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"
