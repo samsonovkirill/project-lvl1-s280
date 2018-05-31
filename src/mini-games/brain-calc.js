@@ -1,5 +1,6 @@
 import startGame from '../game';
 
+const ROUNDS = 3;
 const operatorAction = {
   '-': (a, b) => a - b,
   '+': (a, b) => a + b,
@@ -14,14 +15,12 @@ const startCalcGame = () => {
     const operator = operatorsList[Math.floor(Math.random() * operatorsList.length)];
     const question = `${operand1} ${operator} ${operand2}`;
     const correctAnswer = operatorAction[operator](operand1, operand2);
-    return { question, correctAnswer };
+    return { question, correctAnswer: String(correctAnswer) };
   };
-  const isCorrect = (num1, num2) => parseInt(num1, 10) === parseInt(num2, 10);
   startGame({
     description: 'What is the result of the expression?',
     createQuestion,
-    isCorrect,
-  }, 3);
+  }, ROUNDS);
 };
 
 export default startCalcGame;

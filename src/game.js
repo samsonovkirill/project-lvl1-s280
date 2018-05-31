@@ -12,7 +12,7 @@ function startGame(currentGame, roundsCount) {
     const { question, correctAnswer } = currentGame.createQuestion();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    const answerIsCorrect = currentGame.isCorrect(userAnswer, correctAnswer);
+    const answerIsCorrect = userAnswer === correctAnswer;
     if (answerIsCorrect) {
       console.log('Correct!');
     } else {

@@ -1,6 +1,8 @@
 import findGcd from '../find-gcd';
 import startGame from '../game';
 
+const ROUNDS = 3;
+
 const startGcdGame = () => {
   const createQuestion = () => {
     const base = Math.floor((Math.random() * 10) + 2);
@@ -8,14 +10,12 @@ const startGcdGame = () => {
     const number2 = base * Math.floor((Math.random() * 10) + 1);
     const correctAnswer = findGcd(number1, number2);
     const question = `${number1} ${number2}`;
-    return { question, correctAnswer };
+    return { question, correctAnswer: String(correctAnswer) };
   };
-  const isCorrect = (num1, num2) => parseInt(num1, 10) === parseInt(num2, 10);
   startGame({
     description: 'Find the greatest common divisor of given numbers.',
     createQuestion,
-    isCorrect,
-  }, 3);
+  }, ROUNDS);
 };
 
 export default startGcdGame;
