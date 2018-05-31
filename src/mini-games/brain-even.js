@@ -9,11 +9,9 @@ const startEvenGame = () => {
     const correctAnswer = isEven(question) ? 'yes' : 'no';
     return { question, correctAnswer };
   };
-  const isCorrect = (str1, str2) => str1.toLowerCase() === str2.toLowerCase();
   startGame({
     description: 'Answer "yes" if number even otherwise answer "no".',
     createQuestion,
-    isCorrect,
   }, ROUNDS);
 };
 
