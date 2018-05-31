@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import findGcd from '../find-gcd';
+import startGame from '../game';
 
 const playRound = (username) => {
   const base = Math.floor((Math.random() * 10) + 2);
@@ -14,9 +15,11 @@ const playRound = (username) => {
   return isCorrect;
 };
 
-const brainCalc = {
-  description: 'Find the greatest common divisor of given numbers.',
-  playRound,
+const startGcdGame = () => {
+  startGame({
+    description: 'Find the greatest common divisor of given numbers.',
+    playRound,
+  }, 3);
 };
 
-export default brainCalc;
+export default startGcdGame;

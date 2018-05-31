@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import startGame from '../game';
 
 const isEven = num => num % 2 === 0;
 
@@ -13,9 +14,11 @@ const playRound = (username) => {
   return isCorrect;
 };
 
-const brainEven = {
-  description: 'Answer "yes" if number even otherwise answer "no".',
-  playRound,
+const startEvenGame = () => {
+  startGame({
+    description: 'Answer "yes" if number even otherwise answer "no".',
+    playRound,
+  }, 3);
 };
 
-export default brainEven;
+export default startEvenGame;

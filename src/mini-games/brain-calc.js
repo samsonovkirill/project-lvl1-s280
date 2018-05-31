@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import startGame from '../game';
 
 const operatorAction = {
   '-': (a, b) => a - b,
@@ -19,9 +20,11 @@ const playRound = (username) => {
   return isCorrect;
 };
 
-const brainCalc = {
-  description: 'What is the result of the expression?',
-  playRound,
+const startCalcGame = () => {
+  startGame({
+    description: 'What is the result of the expression?',
+    playRound,
+  }, 3);
 };
 
-export default brainCalc;
+export default startCalcGame;
