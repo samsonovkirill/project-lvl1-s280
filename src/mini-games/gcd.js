@@ -8,9 +8,9 @@ const createQuestion = () => {
   const base = generateNum(10, 2);
   const number1 = base * generateNum(10, 1);
   const number2 = base * generateNum(10, 1);
-  const correctAnswer = findGcd(number1, number2);
+  const correctAnswer = String(findGcd(number1, number2));
   const question = `${number1} ${number2}`;
-  return { question, correctAnswer: String(correctAnswer) };
+  return { question, correctAnswer };
 };
 
 const startGcdGame = () => {

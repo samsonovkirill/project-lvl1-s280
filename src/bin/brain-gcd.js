@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import startGcdGame from '../mini-games/brain-gcd';
+import startGcdGame from '../mini-games/gcd';
 
 startGcdGame();

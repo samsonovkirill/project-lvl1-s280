@@ -17,10 +17,10 @@ const createQuestion = () => {
   const startNum = generateNum(10);
   const progression = generateProgression(startNum, progressionLength);
   const skipIndex = generateNum(progressionLength);
-  const correctAnswer = progression[skipIndex];
+  const correctAnswer = String(progression[skipIndex]);
   progression[skipIndex] = '..';
   const question = progression.join(' ');
-  return { question, correctAnswer: String(correctAnswer) };
+  return { question, correctAnswer };
 };
 
 const startProgressionGame = () => {

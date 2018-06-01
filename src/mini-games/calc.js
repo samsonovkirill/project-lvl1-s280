@@ -15,8 +15,8 @@ const createQuestion = () => {
   const operatorsList = Object.keys(operatorAction);
   const operator = operatorsList[generateNum(operatorsList.length)];
   const question = `${operand1} ${operator} ${operand2}`;
-  const correctAnswer = operatorAction[operator](operand1, operand2);
-  return { question, correctAnswer: String(correctAnswer) };
+  const correctAnswer = String(operatorAction[operator](operand1, operand2));
+  return { question, correctAnswer };
 };
 
 const startCalcGame = () => {
