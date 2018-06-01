@@ -4,11 +4,11 @@ import generateNum from '../utils';
 const description = 'Answer "yes" if number is prime otherwise answer "no".';
 
 const isPrime = (num) => {
-  if (num === 1 || num % 2 === 0) {
+  if (num === 2) {
     return false;
   }
-  if (num === 2) {
-    return true;
+  if (num === 1 || num % 2 === 0) {
+    return false;
   }
   const max = Math.round(Math.sqrt(num));
   for (let i = 3; i <= max; i += 2) {
