@@ -1,6 +1,8 @@
 import startGame from '../game';
 import generateNum from '../utils';
 
+const description = 'What is the result of the expression?';
+
 const operatorAction = {
   '-': (a, b) => a - b,
   '+': (a, b) => a + b,
@@ -19,7 +21,7 @@ const createQuestion = () => {
 
 const startCalcGame = () => {
   startGame({
-    description: 'What is the result of the expression?',
+    description,
     createQuestion,
   });
 };

@@ -1,8 +1,10 @@
 import startGame from '../game';
 import generateNum from '../utils';
 
+const description = 'Balance the given number.';
+
 const balanceNumber = (num) => {
-  const numArr = num.split('');
+  const numArr = num.toString().split('');
   const numArrSum = numArr.reduce((acc, item) => acc + +item, 0);
   const numArrAvg = Math.round(numArrSum / numArr.length);
   const avgArr = [];
@@ -19,14 +21,14 @@ const balanceNumber = (num) => {
 };
 
 const createQuestion = () => {
-  const question = String(generateNum(9999, 100));
+  const question = generateNum(9999, 100);
   const correctAnswer = balanceNumber(question);
-  return { question, correctAnswer };
+  return { question: String(question), correctAnswer };
 };
 
 const startBalanceGame = () => {
   startGame({
-    description: 'Balance the given number.',
+    description,
     createQuestion,
   });
 };

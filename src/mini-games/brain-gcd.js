@@ -1,6 +1,7 @@
 import startGame from '../game';
 import generateNum from '../utils';
 
+const description = 'Find the greatest common divisor of given numbers.';
 const findGcd = (num1, num2) => (num2 ? findGcd(num2, num1 % num2) : num1);
 
 const createQuestion = () => {
@@ -14,7 +15,7 @@ const createQuestion = () => {
 
 const startGcdGame = () => {
   startGame({
-    description: 'Find the greatest common divisor of given numbers.',
+    description,
     createQuestion,
   });
 };
