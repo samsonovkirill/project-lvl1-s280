@@ -5,7 +5,7 @@ const description = 'Answer "yes" if number is prime otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num === 2) {
-    return false;
+    return true;
   }
   if (num === 1 || num % 2 === 0) {
     return false;
@@ -22,7 +22,8 @@ const isPrime = (num) => {
 const createQuestion = () => {
   const question = generateNum(10000);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  return { question, correctAnswer };
+  const questionText = `Is this number prime? ${question}`;
+  return { question: questionText, correctAnswer };
 };
 
 const startPrimeGame = () => {
